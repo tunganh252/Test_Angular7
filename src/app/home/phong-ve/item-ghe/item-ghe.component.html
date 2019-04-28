@@ -1,0 +1,7 @@
+<button 
+    class="btn ghe m-1" 
+    [disabled]="ghe.DaDat" 
+    [ngClass]="{gheDaDat: ghe.DaDat, gheDangChon: dangChon}"
+    (click)="datGhe()"
+>{{ghe.TenGhe}}</button>
+<br *ngIf="ghe.STT % 8 === 0">

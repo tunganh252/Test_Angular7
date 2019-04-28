@@ -1,0 +1,33 @@
+ <!--Begin item -->
+<div class="card">
+	<img class="card-img-top" [src]="movie.HinhAnh" alt="">
+	<div class="card-body">
+		<h4 class="card-title">{{movie.TenPhim}}</h4>
+		<p>{{movie>MoTa}}</p>
+
+		<!-- Truyền tham số URL -->
+
+		<!-- ///////////////////////////// -->
+		<!-- Cách 1 -->
+		<!-- ///////////////////////////// -->
+
+		<!-- <a class="btn btn-success" routerLink="/home/danh-sach-phim/chi-tiet/{{movie.MaPhim}}" >Chi Tiết</a> -->
+		<!-- ///////////////////////////// -->
+		<!-- Cách 2 (nhận thêm nhiều params) khi dùng thẻ <a link> -->
+		<!-- ///////////////////////////// -->
+
+		<!-- <a class="btn btn-danger"
+			[routerLink]="['/home/danh-sach-phim/chi-tiet/', movie.MaPhim]"
+			[queryParams]="{maPhim: movie.MaPhim, tenPhim: movie.TenPhim}">Chi
+			Tiết</a> -->
+		<!-- <a class="btn btn-danger"
+			[routerLink]="['/home/danh-sach-phim/chi-tiet/']" 
+			[queryParams]="{maPhim: movie.MaPhim, tenPhim: movie.TenPhim}">Chi
+			Tiết</a> -->
+		<!-- ///////////////////////////// -->
+		<!-- Cách 3 (khi dùng button)-->
+		<!-- ///////////////////////////// -->
+		<button class="btn btn-danger" (click)="chiTietPhim()">Chi Tiết</button>
+	</div>
+</div>
+<!-- End item -->

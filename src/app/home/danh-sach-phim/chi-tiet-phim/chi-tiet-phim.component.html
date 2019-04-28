@@ -1,0 +1,52 @@
+<ng-container *ngIf="movie">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img [src]="movie.HinhAnh" alt="">
+      </div>
+      <div class="col-md-6">
+        <div class="container">
+          <table class="table table-dark">
+            <tbody>
+              <tr>
+                <td>Tên Phim: </td>
+                <td>{{movie.TenPhim}}</td>
+              </tr>
+              <tr>
+                <td>Mô Tả: </td>
+                <td>{{movie.MoTa}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container">
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th>Tên Rạp</th>
+              <th>Ngày Chiếu</th>
+              <th>Giờ Chiếu</th>
+              <th>Giá Vé</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of movie.LichChieu">
+              <td>{{item.Rap.TenRap}}</td>
+              <td>{{item.NgayChieuGioChieu | date: 'dd-MM-yyyy'}}</td>
+              <td>{{item.NgayChieuGioChieu | date: 'shortTime'}}</td>
+              <td>{{item.GiaVe}}</td>
+              <td>
+                <button class="btn btn-success" (click)="muaVe(item.MaLichChieu)">Mua Vé</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</ng-container>
